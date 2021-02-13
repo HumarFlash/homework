@@ -1,31 +1,21 @@
-def sum_per(n):
-    n1 = int(str(n)[::-1])
-    n += n1
-    return n
+# k >= n
+
+def fact(f):
+    f_def = 1
+    for i in range(1, f + 1):
+        f_def *= i
+    return f_def
 
 
-def check(n):
-    n = str(n)
-    mid = len(n) // 2
-    uk_def = True
-
-    for i in range(mid):
-        if n[i] != n[-i - 1]:
-            uk_def = False
-            break
-
-    return uk_def
+def soch_ch(n_def, k_def):
+    q_def = fact(k_def) / (fact(k_def - n_def) * fact(n_def))
+    return q_def
 
 
-def main(q):
-    uk = False
-    while uk is False:
-        uk = check(q)
-        if uk is True:
-            break
-        q = sum_per(q)
-    print(q)
+def main():
+    n, k = map(int, input().split())
+    q = soch_ch(n, k)
+    print(int(q))
 
 
-k = int(input())
-main(k)
+main()
