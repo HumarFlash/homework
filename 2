@@ -1,0 +1,21 @@
+def search(s, a, m, d, start):
+    global k
+    for i in range(start, len(a)):
+        if (s + a[i]) >= (m - d) and (s + a[i]) <= (m + d):
+            k += 1
+            s += a[i]
+            search(s, a, m, d, i + 1)
+            s -= a[i]
+        elif (s + a[i]) <= (m + d):
+            s += a[i]
+            search(s, a, m, d, i + 1)
+            s -= a[i]
+
+
+n, m, d = int(input()), int(input()), int(input())
+a = []
+k = 0
+for i in range(n):
+    a.append(int(input()))
+search(0, a, m, d, 0)
+print(k)
