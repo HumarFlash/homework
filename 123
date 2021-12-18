@@ -1,0 +1,23 @@
+# c
+
+
+t = int(input())
+for i in range(t):
+    n = int(input())
+    pred = 2 * n
+    if (n % 3 - 2) == 0 or (2 * n % 3 - 2) == 0 or (3 * n % 3 - 2) == 0 or (4 * n % 3 - 2) == 0 or (
+            5 * n % 3 - 2) == 0 or (6 * n % 3 - 2) == 0 or (7 * n % 3 - 2) == 0 or (8 * n % 3 - 2) == 0 or (
+            9 * n % 3 - 2) == 0:
+        print("YES")
+    else:
+        print("NO")
+        
+        
+#d
+
+
+t = int(input())
+for i in range(t):
+    n, l, r = map(int, input().split())
+    ans = (r-1) // n - (l-1) // n
+    print(ans)
